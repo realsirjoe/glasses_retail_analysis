@@ -20,7 +20,8 @@ The project can be split into three parts:
 
 Since the data is not publicly available in a structured format we need to scrape it from the various retailer websites. Python has been choosen in combination with Scrapy to enable easy as well as fast extraction. Often the underlying API has been utilized in cases where this wasn't possible the data was extracted from the html via beautifulsoup. The spiders were able to extract all data in less than an hour, no proxies were required since the number of items was fairly small. 
 
-The items were stored in an sqlite database
+The items were stored in an sqlite database and later loaded into pandas
+
 
 ## Transformation
 
@@ -76,18 +77,7 @@ Of course now we can also answer the question which retailer has the best price 
 
 If I had more time with this project I would increase the number of items as well as industries and make it a more general tool. 
 
-Further product matching could be improved by incorperating a transformer based approach and train with labeled data. 
+Further product matching could be improved by incorperating a transformer based approach and train with labeled data and match via product images
 
 I would also aim to collect popularity metrics for all items as well as retailer size metrics and estimate relative or even total profits
 
-
-
-The project can be split into three parts:
-
-
-- Visualization
-To draw conclusions about the data and visualize them jupyter, pandas, numpy and a view smaller packages were utilized. 
-
-More complex analysis involved matching products from different retailers and comparing prices. term frequency and inverse document frequency (tf idf) was used for this challange. It was experimented to weight the beginning higher than the end of a string as well as add space seperated words to the tokens, next to ngrams but these turned out to perform poorer than simply using the algorithm with 3 letter ngrams. Matching could be improved by incorporating other machine learning techniques using labeled data but tf idf turned out to be sufficient for this project. 
-
-[ photos here 
