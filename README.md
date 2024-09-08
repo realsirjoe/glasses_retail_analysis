@@ -3,6 +3,8 @@
 Product analysis can be used to identify pricing correlations, competitive positioning and to enhance customer insights.
 This project collected 35K items from some of the biggest opticians in Austria. The Optician industry has a fairly small set of total items which makes it easy to perform tests and validations and play around with the data. Further the software can track prices and assist in creating a competitive pricing strategy.
 
+[Interactive Charts on Tableau](https://public.tableau.com/app/profile/sergio.wagenleitner/viz/GlassesProductAnalysis/Dashboard1)
+
 Data was collected from 4 different retailers:
 - Fielmann
 - Mr Spex
@@ -75,9 +77,10 @@ Of course now we can also answer the question which retailer has the best price 
 
 # Future Enhancements
 
-If I had more time with this project I would increase the number of items as well as industries and make it a more general tool. 
+The following are possible improvements to this project if I had more time
 
-Further product matching could be improved by incorperating a transformer based approach and train with labeled data and match via product images
+- Increase the number of items as well as industries and make it a more general tool. 
 
-I would also aim to collect popularity metrics for all items as well as retailer size metrics and estimate relative or even total profits
+- Product matching could be improved by incorperating a transformer based approach and train with labeled data and match via product images
 
+- Collect popularity metrics for all items as well as retailer size metrics and estimate relative or even total profits
