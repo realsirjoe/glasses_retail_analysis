@@ -79,7 +79,7 @@ Retailers didn't always provide the exact same product with the matching color s
 
 ![alt text](https://github.com/realsirjoe/glasses_retail_analysis/blob/main/github_images/brand_price_real_relative_mean_deviation.png?raw=true)
 
-If we compare the chart with the simple method that grouped items by brand and built the mean we can see a strong correlation. Most of the time values are very close to each other and the previous chart turns out to be good approximation. 
+If we compare the chart with the simple method that grouped items by brand and built the mean we can see a strong correlation. Most of the time values are even very close to each other and the previous chart turns out to be good approximation. 
 
 Therefore if we know what brand(s) we want to buy but are not sure which item we could make a retailer choice based on this chart. Also it could be used as a metric for retailers to evaluate their pricing strategy. 
 
