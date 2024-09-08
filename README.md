@@ -32,7 +32,7 @@ Data cleaning was fairly straightforward, including lowercasing as well as strip
 
 I was finally able to get deeper insights from the collected data. Pandas and Numpy were used inside jupyter for this step. To get started I looked at product quantities by retailer and brand. 
 
-![alt text](https://github.com/6e4a6acc-6bb1-4e93-b7a8-a6e9abaf90f3)
+![alt text](https://github.com/realsirjoe/glasses_retail_analysis/blob/main/github_images/retailer_product_count.png?raw=true)
 
 [photos here]
 
