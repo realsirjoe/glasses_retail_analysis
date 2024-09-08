@@ -68,11 +68,9 @@ An easy method to match would be to use a unique identifier for a product across
 ### TF-IDF
 
 I used Term Frequency-Inverse Document Frequency to solve this problem. First the search term has to be broken down into tokens, which could simply be words seperated by spaces but also fixed size chunks of the term. The term frequency counts these tokens for every search term. The Inverse Document Frequency looks at how unique the terms are over all search terms. By multiplying the two Words that are frequent in a product but rare across all products will have a high TF-IDF score
-  
-  
-  
-  
 
+&nbsp;
+&nbsp;
 
 By also adding the color code to the product this method worked fairly well. The best tokenization algorithm was to simply create one big string of data from the product and split it into chunks/ngrams of length 3. I also experimented with prioritizing the front and adding words seperated by space as tokens which produced poorer results. In general the simple method worked fairly well and matched a large portion of products.
 
