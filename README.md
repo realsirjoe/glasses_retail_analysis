@@ -1,4 +1,4 @@
-Price Intelligence Austrian Glasses
+# Price Intelligence Austrian Glasses
 
 Product analysis can be used to identify pricing correlations, competitive positioning and to enhance customer insights.
 This project collected 35K items from some of the biggest opticians in Austria. The Optician industry has a fairly small set of total items which makes it easy to perform tests and validations and play around with the data. Further the software can track prices and assist in creating a competitive pricing strategy.
@@ -16,19 +16,19 @@ The project can be split into three parts:
 - Transformation
 - Visualization
 
-# Collection
+## Collection
 
 Since the data is not publicly available in a structured format we need to scrape it from the various retailer websites. Python has been choosen in combination with Scrapy to enable easy as well as fast extraction. Often the underlying API has been utilized in cases where this wasn't possible the data was extracted from the html via beautifulsoup. The spiders were able to extract all data in less than an hour, no proxies were required since the number of items was fairly small. 
 
 The items were stored in an sqlite database
 
-# Transformation
+## Transformation
 
 To enable fast experimentation jupyter was used at this stage. 
 
 Data cleaning was fairly straightforward, including lowercasing as well as striping certain special characters. Another step involved translating german colors to english.
 
-# Visualization
+## Visualization
 
 I was finally able to get deeper insights from the collected data. Pandas and Numpy were used inside jupyter for this step. To get started I looked at product quantities by retailer and brand. 
 
