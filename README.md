@@ -38,9 +38,11 @@ I was finally able to get deeper insights from the collected data. Pandas and Nu
 
 I also grouped prices to get a feel for expensive or cheap brands.
 
+![alt text](https://github.com/realsirjoe/glasses_retail_analysis/blob/main/github_images/expensive_brands.png?raw=true)
+
 After looking for correlations between color and price I found that golden, black and silver colors are pricey while purple, pink and transparent colors are on the cheaper side. To avoid outliers only colors that appeared over 100 times were considered
 
-[photos here]
+![alt text](https://github.com/realsirjoe/glasses_retail_analysis/blob/main/github_images/expensive_colors.png?raw=true)
 
 To compare price differences between retailers an easy approach would be to boxplot the prices grouped by retailer. While interesting to explore this would only describe their positioning in the market not which one has the cheapest products. Some might simply have more expensive brands rather than selling the same products for more. 
 
@@ -48,7 +50,7 @@ To compare price differences between retailers an easy approach would be to boxp
 
 Another more refined approach would be to group by brand and then build a mean from that brands prices. This could be a good approximation but could still fall victim to the same problem mentioned above. 
 
-[photos here]
+![alt text](https://github.com/realsirjoe/glasses_retail_analysis/blob/main/github_images/brand_price_relative_mean_deviation.png?raw=true)
 
 To answer the question which retailer gives you the best prices the best solution though more complicated would be to match all products from all retailers and compare their difference therefore comparing the same items and removing the forementioned problem. 
 
@@ -62,7 +64,7 @@ As a side effect I created a way to match products and create price intelligence
 
 Retailers didn't always provide the exact same product with the matching color so the number of our matches is smaller than the number of unique products. 
 
-[ photos ]
+![alt text](https://github.com/realsirjoe/glasses_retail_analysis/blob/main/github_images/brand_price_real_relative_mean_deviation.png?raw=true)
 
 If we compare the chart with the simple method that grouped items by brand and built the mean we can see a strong correlation. Most of the time values are very close to each other and the previous chart turns out to be good approximation. 
 
