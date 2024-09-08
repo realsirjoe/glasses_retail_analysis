@@ -34,7 +34,7 @@ I was finally able to get deeper insights from the collected data. Pandas and Nu
 
 ![alt text](https://github.com/realsirjoe/glasses_retail_analysis/blob/main/github_images/retailer_product_count.png?raw=true)
 
-[photos here]
+![alt text](https://github.com/realsirjoe/glasses_retail_analysis/blob/main/github_images/brand_count.png?raw=true)
 
 I also grouped prices to get a feel for expensive or cheap brands.
 
