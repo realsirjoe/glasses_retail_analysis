@@ -1,4 +1,4 @@
-# Price Intelligence Austrian Glasses
+# Glasses Retailer Data Analysis
 
 ## [Interactive Version on Tableau](https://public.tableau.com/app/profile/sergio.wagenleitner/viz/GlassesProductAnalysis/Dashboard1)
 
