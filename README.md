@@ -1,9 +1,12 @@
 # Price Intelligence Austrian Glasses
 
+## [Interactive Version on Tableau](https://public.tableau.com/app/profile/sergio.wagenleitner/viz/GlassesProductAnalysis/Dashboard1)
+
+## Summary
+
 Product analysis can be used to identify pricing correlations, competitive positioning and to enhance customer insights.
 This project collected 35K items from some of the biggest opticians in Austria. The Optician industry has a fairly small set of total items which makes it easy to perform tests and validations and play around with the data. Further the software can track prices and assist in creating a competitive pricing strategy.
 
-[Interactive Charts on Tableau](https://public.tableau.com/app/profile/sergio.wagenleitner/viz/GlassesProductAnalysis/Dashboard1)
 
 Data was collected from 4 different retailers:
 - Fielmann
