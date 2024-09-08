@@ -27,6 +27,7 @@ Since the data is not publicly available in a structured format we need to scrap
 
 The items were stored in an sqlite database and later loaded into pandas
 
+![alt text](https://github.com/realsirjoe/glasses_retail_analysis/blob/main/github_images/dataframe.png?raw=true)
 
 ## Transformation
 
@@ -78,7 +79,7 @@ Therefore if we know what brand(s) we want to buy but are not sure which item we
 
 Of course now we can also answer the question which retailer has the best price for a specific item. 
 
-# Future Enhancements
+# Possible Enhancements
 
 The following are possible improvements to this project if I had more time
 
