@@ -52,7 +52,7 @@ After looking for correlations between color and price I found that golden, blac
 
 To compare price differences between retailers an easy approach would be to boxplot the prices grouped by retailer. While interesting to explore this would only describe their positioning in the market not which one has the cheapest products. Some might simply have more expensive brands rather than selling the same products for more. 
 
-[photos here]
+![alt text](https://github.com/realsirjoe/glasses_retail_analysis/blob/main/github_images/brand_price_boxplot.png?raw=true)
 
 Another more refined approach would be to group by brand and then build a mean from that brands prices. This could be a good approximation but could still fall victim to the same problem mentioned above. 
 
