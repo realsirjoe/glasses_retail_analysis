@@ -1,20 +1,20 @@
 # Glasses Retailer Data Analysis
 
-## [Interactive Version on Tableau](https://public.tableau.com/app/profile/sergio.wagenleitner/viz/GlassesProductAnalysis/Dashboard1)
+[Interactive Version on Tableau](https://public.tableau.com/app/profile/sergio.wagenleitner/viz/GlassesProductAnalysis/Dashboard1)
+
+[Source Code](https://github.com/realsirjoe/glasses_retail_analysis)
 
 ## Summary
 
-Product analysis can be used to identify pricing correlations, competitive positioning and to enhance customer insights.
-This project collected 35K items from some of the biggest opticians in Austria. The Optician industry has a fairly small set of total items which makes it easy to perform tests and validations and play around with the data. Further the software can track prices and assist in creating a competitive pricing strategy.
+Product analysis can be used to identify pricing correlations, competitive positioning, and enhance customer insights. This project collected data on 35K items from some of the largest opticians in Austria. The optician industry has a relatively small set of total items, which makes it easier to perform tests, validations, and experiments with the data. Additionally, the software can track prices and assist in developing a competitive pricing strategy.
 
-
-Data was collected from 4 different retailers:
+Data was collected from four different retailers:
 - Fielmann
 - Mr Spex
 - Pearle
 - Hartlauer
 
-Spanning a total of 259 brands
+Spanning a total of 259 brands.
 
 The project can be split into three parts:
 - Collection
@@ -23,72 +23,73 @@ The project can be split into three parts:
 
 ## Collection
 
-Since the data is not publicly available in a structured format we need to scrape it from the various retailer websites. Python has been choosen in combination with Scrapy to enable easy as well as fast extraction. Often the underlying API has been utilized in cases where this wasn't possible the data was extracted from the html via beautifulsoup. The spiders were able to extract all data in less than an hour, no proxies were required since the number of items was fairly small. 
+Since the data is not publicly available in a structured format, we had to scrape it from various retailer websites. Python was chosen in combination with Scrapy to enable easy and fast extraction. Often, the underlying API was utilized, and in cases where this wasn’t possible, the data was extracted from the HTML via BeautifulSoup. The spiders were able to extract all data in less than an hour. No proxies were required since the number of items was fairly small.
 
-The items were stored in an sqlite database and later loaded into pandas
+The items were stored in an SQLite database and later loaded into pandas.
 
 ![alt text](https://github.com/realsirjoe/glasses_retail_analysis/blob/main/github_images/dataframe.png?raw=true)
 
 ## Transformation
 
-To enable fast experimentation jupyter was used at this stage. 
+To enable fast experimentation, Jupyter was used at this stage.
 
-Data cleaning was fairly straightforward, including lowercasing as well as striping certain special characters. Another step involved translating german colors to english.
+Data cleaning was fairly straightforward, including lowercasing and stripping certain special characters. Another step involved translating German color names to English.
 
 ## Visualization
 
-I was finally able to get deeper insights from the collected data. Pandas and Numpy were used inside jupyter for this step. To get started I looked at product quantities by retailer and brand. 
+I was finally able to derive deeper insights from the collected data. Pandas and NumPy were used within Jupyter for this step. To begin, I looked at product quantities by retailer and brand.
 
 ![alt text](https://github.com/realsirjoe/glasses_retail_analysis/blob/main/github_images/retailer_product_count.png?raw=true)
 
 ![alt text](https://github.com/realsirjoe/glasses_retail_analysis/blob/main/github_images/brand_count.png?raw=true)
 
-I also grouped prices to get a feel for expensive or cheap brands.
+I also grouped prices to get a sense of which brands were expensive and which were cheaper.
 
 ![alt text](https://github.com/realsirjoe/glasses_retail_analysis/blob/main/github_images/expensive_brands.png?raw=true)
 
-After looking for correlations between color and price I found that golden, black and silver colors are pricey while purple, pink and transparent colors are on the cheaper side. To avoid outliers only colors that appeared over 100 times were considered
+After analyzing correlations between color and price, I found that golden, black, and silver-colored glasses tend to be more expensive, while purple, pink, and transparent ones are on the cheaper side. To avoid outliers, only colors that appeared over 100 times were considered.
 
 ![alt text](https://github.com/realsirjoe/glasses_retail_analysis/blob/main/github_images/expensive_colors.png?raw=true)
 
-To compare price differences between retailers an easy approach would be to boxplot the prices grouped by retailer. While interesting to explore this would only describe their positioning in the market not which one has the cheapest products. Some might simply have more expensive brands rather than selling the same products for more. 
+To compare price differences between retailers, a straightforward approach would be to use a boxplot to group prices by retailer. While interesting, this would only describe their market positioning rather than which retailer has the cheapest products. Some might simply stock more expensive brands rather than selling the same products for higher prices.
 
 ![alt text](https://github.com/realsirjoe/glasses_retail_analysis/blob/main/github_images/brand_price_boxplot.png?raw=true)
 
-Another more refined approach would be to group by brand and then build a mean from that brands prices. This could be a good approximation but could still fall victim to the same problem mentioned above. 
+A more refined approach would be to group prices by brand and then calculate a mean from the prices within each brand. This could serve as a good approximation but could still suffer from the same issue mentioned above.
 
 ![alt text](https://github.com/realsirjoe/glasses_retail_analysis/blob/main/github_images/brand_price_relative_mean_deviation.png?raw=true)
 
-To answer the question which retailer gives you the best prices the best solution though more complicated would be to match all products from all retailers and compare their difference therefore comparing the same items and removing the forementioned problem. However this turns out to be rather difficult. 
+To answer the question of which retailer offers the best prices, the ideal solution—though more complex—would be to match all products from all retailers and compare their differences, thus comparing identical items and eliminating the aforementioned problem. However, this turns out to be rather difficult.
 
-### Unique Ids
+### Unique IDs
 
-An easy method to match would be to use a unique identifier for a product across retailers but these don't always exist or may not exist at all for some retailers. A more resilient solution would be to match by all or a subset of product fields in some intelligent way. 
+An easy method to match products would be to use a unique identifier across retailers, but these don’t always exist, or may not exist at all for some retailers. A more resilient solution would be to match by all or a subset of product fields in an intelligent way.
 
 ### TF-IDF
 
-I used Term Frequency-Inverse Document Frequency to solve this problem. First the search term has to be broken down into tokens, which could simply be words seperated by spaces but also fixed size chunks of the term. The term frequency counts these tokens for every search term. The Inverse Document Frequency looks at how unique the terms are over all search terms. By multiplying the two Words that are frequent in a product but rare across all products will have a high TF-IDF score
+I used Term Frequency-Inverse Document Frequency (TF-IDF) to solve this problem. First, the search term had to be broken down into tokens, which could simply be words separated by spaces or fixed-size chunks of the term. The term frequency counts these tokens for every search term. The Inverse Document Frequency looks at how unique the terms are across all search terms. By multiplying the two, words that are frequent in a product but rare across all products will have a high TF-IDF score.
 
 &nbsp;
 
-By also adding the color code to the product this method worked fairly well. The best tokenization algorithm was to simply create one big string of data from the product and split it into chunks/ngrams of length 3. I also experimented with prioritizing the front and adding words seperated by space as tokens which produced poorer results. In general the simple method worked fairly well and matched a large portion of products.
+By adding the color code to the product, this method worked fairly well. The best tokenization algorithm was to create one big string of data from the product and split it into chunks/ngrams of length 3. I also experimented with prioritizing the front and adding words separated by spaces as tokens, but these produced poorer results. In general, the simpler method worked well and matched a large portion of the products.
 
-As a side effect I created a way to match products and create price intelligence for retailers to stay competitive. 
+As a side effect, I created a way to match products and generate price intelligence for retailers to stay competitive.
 
-Retailers didn't always provide the exact same product with the matching color so the number of our matches is smaller than the number of unique products. 
+Retailers didn’t always provide the exact same product with matching colors, so the number of matches was smaller than the number of unique products.
 
 ![alt text](https://github.com/realsirjoe/glasses_retail_analysis/blob/main/github_images/brand_price_real_relative_mean_deviation.png?raw=true)
 
-If we compare the chart with the simple method that grouped items by brand and built the mean we can see a strong correlation. Most of the time values are even very close to each other and the previous chart turns out to be good approximation. 
+If we compare this chart with the simple method of grouping items by brand and calculating the mean, we can see a strong correlation. Most of the time, values are very close to each other, and the previous chart turns out to be a good approximation.
 
-Therefore if we know what brand(s) we want to buy but are not sure which item we could make a retailer choice based on this chart. Also it could be used as a metric for retailers to evaluate their pricing strategy. 
+Therefore, if we know which brand(s) we want to buy but aren’t sure which item, we could make a retailer choice based on this chart. It could also be used as a metric for retailers to evaluate their pricing strategy.
 
-Of course now we can also answer the question which retailer has the best price for a specific item. 
+Of course, we can now also answer the question of which retailer offers the best price for a specific item.
 
 # Possible Enhancements
 
-- Increase the number of items as well as industries and make it a more general tool. 
+- Increase the number of items as well as industries and make it a more general tool.
 
-- Product matching could be improved by incorperating a transformer based approach and train with labeled data and match via product images
+- Product matching could be improved by incorporating a transformer-based approach, training with labeled data, and matching via product images.
 
-- Collect popularity metrics for all items as well as retailer size metrics and estimate relative or even total profits
+- Collect popularity metrics for all items as well as retailer size metrics to estimate relative or even total profits.
+
